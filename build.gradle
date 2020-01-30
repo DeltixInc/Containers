@@ -1,0 +1,8 @@
+plugins {
+    id "me.champeau.gradle.jmh" version "0.3.1" apply false
+}
+
+allprojects {
+    apply from: "$rootDir/gradle/Deltix.gradle"
+}
+apply from: "$rootDir/gradle/Release.gradle"

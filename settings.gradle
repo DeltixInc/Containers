@@ -1,0 +1,8 @@
+include 'java'
+include 'java7'
+if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+    include 'csharp'
+}
+
+project(':java').name = 'deltix-containers'
+project(':java7').name = 'deltix-containers-java7'
