@@ -573,28 +573,10 @@ public class TestBinaryArray implements BinaryConvertibleReadWrite {
         return this;
     }
 
-
-    public TestBinaryArray nativeAppendByteArray(byte[] bytes) {
-        hashCode = hashCode | 0x40000000;
-        resize(count + bytes.length + 2);
-        MemoryHelper.memMove(bytes, 0, data, count, bytes.length);
-        count += bytes.length;
-        return this;
-    }
-
     public TestBinaryArray unsafeAppendByteArray(byte[] bytes) {
         hashCode = hashCode | 0x40000000;
         resize(count + bytes.length + 2);
         UnsafeHelper.memMoveFromByteToLong(bytes, 0, data, count, bytes.length);
-        count += bytes.length;
-        return this;
-    }
-
-
-    public TestBinaryArray fastAppendByteArray(byte[] bytes) {
-        hashCode = hashCode | 0x40000000;
-        resize(count + bytes.length + 2);
-        MemoryHelper.memMove(bytes, 0, data, count, bytes.length);
         count += bytes.length;
         return this;
     }
